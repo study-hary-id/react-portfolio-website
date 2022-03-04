@@ -9,6 +9,54 @@ function Home() {
   return (
     <Section id="home">
       <Navbar />
+      <div className="home">
+        <div className="content">
+          <div className="title">
+            <h1>Digital Crafters</h1>
+          </div>
+          <div className="subTitle">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vivamus pharetra mi tincidunt diam porttitor sollicitudin
+              feugiat sed nibh. Morbi ornare purus dui, at imperdiet metus
+              tempus a.
+            </p>
+          </div>
+          <img src={play} alt="play" />
+        </div>
+      </div>
+
+      <div className="info">
+        <div className="grid">
+          <div className="col">
+            <strong>Agency</strong>
+            <p>Digital Crafters</p>
+          </div>
+          <div className="col">
+            <strong>Email</strong>
+            <p>haryansyah.person.id@gmail.com</p>
+          </div>
+          <div className="col">
+            <strong>Mobile</strong>
+            <p>+62 818 0612 2365</p>
+          </div>
+          <div className="col">
+            <strong>Address</strong>
+            <p>Kab. Bogor, Jawa Barat</p>
+            <p>17620 Klapanunggal</p>
+          </div>
+          <div className="col">
+            <strong>Services</strong>
+            <p>Front-end Engineer</p>
+            <p>Back-end Engineer</p>
+          </div>
+          <div className="col">
+            <strong>Working Hours</strong>
+            <p>Monday to Friday</p>
+            <p>09:00 to 17:00</p>
+          </div>
+        </div>
+      </div>
     </Section>
   )
 }
