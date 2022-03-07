@@ -1,4 +1,5 @@
 import React from "react";
+import Blog from "./components/Blog";
 import Home from "./components/Home";
 import Milestones from "./components/Milestones";
 import Portfolio from "./components/Portfolio";
@@ -11,6 +12,7 @@ function App() {
       <Services />
       <Portfolio />
       <Milestones />
+      <Blog />
     </div>
   );
 }
