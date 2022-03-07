@@ -23,22 +23,25 @@ function Milestones() {
       data: "recommendations",
       amount: 235
     }
-  ]
+  ];
+
   return (
     <Section>
       <div className="background">
         <img src={milestoneBackground} alt="milestone background" />
       </div>
       <div className="milestones">
-        { milestones.map(({ image, data, amount }) => {
-          return (
-            <div className="milestone">
-              <p>{amount}</p>
-              <span>{data}</span>
-              <img src={image} alt="milestone" />
-            </div>
-          );
-        }) }
+        {
+          milestones.map(({ image, data, amount }) => {
+            return (
+              <div className="milestone">
+                <p>{amount}</p>
+                <span>{data}</span>
+                <img src={image} alt="milestone" />
+              </div>
+            );
+          })
+        }
       </div>
     </Section>
   );
