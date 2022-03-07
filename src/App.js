@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./components/Home";
+import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div>
       <Home />
       <Services />
+      <Portfolio />
     </div>
   );
 }
