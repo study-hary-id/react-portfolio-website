@@ -48,6 +48,14 @@ const Foot = styled(motion.footer)`
       }
     }
   }
+
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
 `;
 
 export default Footer;

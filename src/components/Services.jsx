@@ -121,6 +121,15 @@ const Section = styled.section`
       }
     }
   }
+
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    .services {
+      margin: 2rem 0;
+      grid-template-columns: 1fr;
+      padding: 0 2rem;
+      gap: 2rem;
+    }
+  }
 `;
 
 export default Services;
