@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import Blog from "./components/Blog";
 import Home from "./components/Home";
 import Testimonials from "./components/Testimonials";
@@ -8,13 +10,13 @@ import Services from "./components/Services";
 import Pricing from "./components/Pricing";
 import Skills from "./components/Skills";
 import Video from "./components/Video";
+import ScrollToTop from "./components/ScrollToTop";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <div>
+    <motion.div initial="hidden" animate="show">
       <Home />
       <Services />
       <Portfolio />
@@ -27,7 +29,7 @@ function App() {
       <Contact />
       <Footer />
       <ScrollToTop />
-    </div>
+    </motion.div>
   );
 }
 
