@@ -158,7 +158,7 @@ const Section = styled.section`
         }
 
         h3 {
-          transform: rotate(30deg);
+          transform: rotate(90deg);
           color: white;
           font-size: 2rem;
         }
