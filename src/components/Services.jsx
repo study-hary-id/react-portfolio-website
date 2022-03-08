@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Title from "./Title";
-// import { useScroll } from "./useScroll";
-// import { servicesAnimations } from "animations";
+import { useScroll } from "./useScroll";
+import { servicesAnimations } from "../animations";
 
 import play from "../assets/images/play.png";
 import service1 from "../assets/images/service1.png";
@@ -12,6 +12,8 @@ import service2 from "../assets/images/service2.png";
 import service3 from "../assets/images/service3.png";
 
 function Services() {
+  const [element, controls] = useScroll();
+
   const data = [
     {
       type: "Design",
@@ -37,13 +39,18 @@ function Services() {
   ];
 
   return (
-    <Section id="services">
+    <Section id="services" ref={element}>
       <Title value="services" />
       <div className="services">
         {
           data.map(({ type, text, image }, index) => {
             return (
-              <div className="services__service">
+              <motion.div
+                className="services__service"
+                animate={controls}
+                variants={servicesAnimations}
+                transition={{ delay: 0.03, type: "tween", duration: 0.8}}
+              >
                 <div className="services__service__image">
                   <img src={image} alt="service" />
                 </div>
@@ -55,7 +62,7 @@ function Services() {
 
                 <p className="services__service__description">{text}</p>
                 <img src={play} alt="play" />
-              </div>
+              </motion.div>
             );
           })
         }
