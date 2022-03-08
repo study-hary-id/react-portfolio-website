@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useScroll } from "./useScroll";
-import { navAnimations } from "../animations";
 import { motion } from "framer-motion";
 
+import { useScroll } from "./useScroll";
+import { navAnimations } from "../animations";
 import { GiHamBurgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 
