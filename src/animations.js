@@ -23,7 +23,7 @@ export const portfolioAnimations = {
   show: { scale: 1, opacity: 1 },
 };
 
-export const milestoneAnimations = {
+export const milestonesAnimations = {
   hidden: { scale: 0, opacity: 0 },
   show: { scale: 1, opacity: 1 },
 };
