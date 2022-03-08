@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+import { useScroll } from "./useScroll";
+import { milestonesAnimations } from "../animations";
 
 import milestone1 from "../assets/images/milestone1.png";
 import milestone2 from "../assets/images/milestone2.png";
@@ -7,6 +11,8 @@ import milestone3 from "../assets/images/milestone3.png";
 import milestoneBackground from "../assets/images/milestone-background.png";
 
 function Milestones() {
+  const [element, controls] = useScroll();
+
   const milestones = [
     {
       image: milestone1,
@@ -26,7 +32,7 @@ function Milestones() {
   ];
 
   return (
-    <Section>
+    <Section ref={element}>
       <div className="background">
         <img src={milestoneBackground} alt="milestone background" />
       </div>
@@ -34,11 +40,16 @@ function Milestones() {
         {
           milestones.map(({ image, data, amount }) => {
             return (
-              <div className="milestone">
+              <motion.div
+                className="milestone"
+                animate={controls}
+                variants={milestonesAnimations}
+                transition={{ delay: 0.03, type: "tween", duration: 0.8 }}
+              >
                 <p>{amount}</p>
                 <span>{data}</span>
                 <img src={image} alt="milestone" />
-              </div>
+              </motion.div>
             );
           })
         }
