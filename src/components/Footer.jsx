@@ -1,11 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+import { useScroll } from "./useScroll";
+import { footerTextAnimations } from "../animations";
 
 import { BsBehance, BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 
 function Footer() {
+  const [element, controls] = useScroll();
+
   return (
-    <Foot>
+    <Foot
+      ref={element}
+      animate={controls}
+      variants={footerTextAnimations}
+      transition={{ delay: 0.03, type: "tween", duration: 0.8 }}
+    >
       <span>&copy; Template created with love by Muhammad Haryansyah</span>
       <div className="footer__social__icons">
         <BsBehance />
@@ -17,7 +28,7 @@ function Footer() {
   );
 }
 
-const Foot = styled.footer`
+const Foot = styled(motion.footer)`
   background-color: var(--primary-color);
   color: white;
   display: flex;

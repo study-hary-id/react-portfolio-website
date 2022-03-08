@@ -1,17 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+import { useScroll } from "./useScroll";
+import { videoAnimations } from "../animations";
 
 import video1 from "../assets/images/video1.png";
 import video2 from "../assets/images/video2.png";
 
 function Video() {
+  const [element, controls] = useScroll();
+
   return (
-    <Section>
+    <Section ref={element}>
       <div className="background">
         <img src={video1} alt="video" className="design1" />
         <img src={video2} alt="video" className="design2" />
       </div>
-      <div className="video">
+      <motion.div
+        className="video"
+        animate={controls}
+        variants={videoAnimations}
+        transition={{ delay: 0.03, type: "tween", duration: 0.8 }}
+      >
         <iframe
           width="960"
           height="515"
@@ -21,7 +32,7 @@ function Video() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-      </div>
+      </motion.div>
     </Section>
   );
 }

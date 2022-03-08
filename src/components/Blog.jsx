@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import Title from "./Title";
+import { useScroll } from "./useScroll";
+import { blogsAnimations } from "../animations";
 
 import play from "../assets/images/play.png";
 import placeholder from "../assets/images/placeholder.png";
 
 function Blog() {
+  const [element, controls] = useScroll();
+
   const blogData = [
     {
       title: "Lorem Ipsum",
@@ -31,14 +37,19 @@ function Blog() {
   ];
 
   return (
-    <Section id="blog">
+    <Section id="blog" ref={element}>
       <Title value="blog" />
       <div className="decoration"></div>
       <div className="blog__list">
         {
           blogData.map(({ title, type, description }) => {
             return (
-              <div className="blog">
+              <motion.div
+                className="blog"
+                animate={controls}
+                variants={blogsAnimations}
+                transition={{ delay: 0.03, type: "tween", duration: 0.8 }}
+              >
                 <div className="image">
                   <img src={placeholder} alt="placeholder" />
                 </div>
@@ -51,7 +62,7 @@ function Blog() {
                   <img src={play} alt="play" />
                   <span>Read More</span>
                 </div>
-              </div>
+              </motion.div>
             );
           })
         }

@@ -1,12 +1,18 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import Title from "./Title";
+import { useScroll } from "./useScroll";
+import { pricingAnimations } from "../animations";
 
 import play from "../assets/images/play.png";
 import pricing1 from "../assets/images/pricing1.png";
 import pricing2 from "../assets/images/pricing2.png";
 
 function Pricing() {
+  const [element, controls] = useScroll();
+
   const plans = [
     {
       name: "Basic",
@@ -66,7 +72,7 @@ function Pricing() {
   ];
 
   return (
-    <Section>
+    <Section ref={element}>
       <Title value="Pricing" />
       <div className="background">
         <img src={pricing1} alt="pricing" className="design1" />
@@ -80,7 +86,13 @@ function Pricing() {
         {
           plans.map(({ name, price }, index) => {
             return (
-              <div className="pricing__plan" key={index}>
+              <motion.div
+                className="pricing__plan"
+                key={index}
+                animate={controls}
+                variants={pricingAnimations}
+                transition={{ delay: 0.03, type: "tween", duration: 0.8 }}
+              >
                 <div className="pricing__plan__name">
                   <h2>{name}</h2>
                   <div className="pricing__plan__name__price">
@@ -115,7 +127,7 @@ function Pricing() {
                     <img src={play} alt="play" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })
         }
