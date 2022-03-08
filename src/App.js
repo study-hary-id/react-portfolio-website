@@ -9,6 +9,7 @@ import Pricing from "./components/Pricing";
 import Skills from "./components/Skills";
 import Video from "./components/Video";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Testimonials />
       <Skills />
       <Contact />
+      <Footer />
     </div>
   );
 }
