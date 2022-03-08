@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { homeAnimations, homeInfoAnimations } from "../animations";
 import Navbar from "./Navbar";
 
 import home from "../assets/images/home.png";
@@ -9,7 +11,11 @@ function Home() {
   return (
     <Section id="home">
       <Navbar />
-      <div className="home">
+      <motion.div
+        className="home"
+        variants={homeAnimations}
+        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+      >
         <div className="content">
           <div className="title">
             <h1>Digital Crafters</h1>
@@ -24,9 +30,13 @@ function Home() {
           </div>
           <img src={play} alt="play" />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="info">
+      <motion.div
+        className="info"
+        variants={homeInfoAnimations}
+        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+      >
         <div className="grid">
           <div className="col">
             <strong>Agency</strong>
@@ -56,7 +66,7 @@ function Home() {
             <p>09:00 to 17:00</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Section>
   )
 }
