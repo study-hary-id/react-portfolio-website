@@ -43,7 +43,7 @@ export const pricingAnimations = {
   show: { y: 0, opacity: 1 },
 };
 
-export const testimonialsAnimation = {
+export const testimonialsAnimations = {
   hidden: { scale: 0, opacity: 0 },
   show: { scale: 1, opacity: 1 },
 };
@@ -59,7 +59,7 @@ export const contactAnimations = {
 };
 
 export const footerTextAnimations = {
-  hidden: { x: -200, opacity: 0 },
+  hidden: { opacity: 0 },
   show: { x: 1, opacity: 1 },
 };
 
