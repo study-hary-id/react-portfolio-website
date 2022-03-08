@@ -18,7 +18,7 @@ export const servicesAnimations = {
   show: { y: 0, opacity: 1 },
 };
 
-export const portfolioAnimation = {
+export const portfolioAnimations = {
   hidden: { scale: 0, opacity: 0 },
   show: { scale: 1, opacity: 1 },
 };
