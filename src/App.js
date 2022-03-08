@@ -6,6 +6,7 @@ import Milestones from "./components/Milestones";
 import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
 import Pricing from "./components/Pricing";
+import Skills from "./components/Skills";
 import Video from "./components/Video";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Video />
       <Pricing />
       <Testimonials />
+      <Skills />
     </div>
   );
 }
