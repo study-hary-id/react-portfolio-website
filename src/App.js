@@ -1,6 +1,7 @@
 import React from "react";
 import Blog from "./components/Blog";
 import Home from "./components/Home";
+import Testimonials from "./components/Testimonials";
 import Milestones from "./components/Milestones";
 import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
@@ -17,6 +18,7 @@ function App() {
       <Blog />
       <Video />
       <Pricing />
+      <Testimonials />
     </div>
   );
 }
