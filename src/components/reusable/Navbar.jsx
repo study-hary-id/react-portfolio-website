@@ -14,6 +14,20 @@ function Navbar() {
   const html = document.querySelector("html");
   html.addEventListener("click", () => setIsNavOpen(false));
 
+  const links = [
+    { name: "Home", path: "#home" },
+    { name: "Services", path: "#services" },
+    { name: "Portfolio", path: "#portfolio" },
+    { name: "Skills", path: "#skills" },
+    { name: "Contact", path: "#contact" },
+  ];
+
+  const navLinks = links.map((link, key) => (
+    <li className={key === 0 ? "active" : ""} key={key}>
+      <a href={link.path}>{link.name}</a>
+    </li>
+  ));
+
   return (
     <Nav
       ref={element}
@@ -35,23 +49,7 @@ function Navbar() {
       </div>
 
       <div className={`links ${isNavOpen ? "show" : ""}`}>
-        <ul>
-          <li className="active">
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
+        <ul>{navLinks}</ul>
       </div>
     </Nav>
   );
