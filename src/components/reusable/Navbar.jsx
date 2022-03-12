@@ -46,9 +46,6 @@ function Navbar() {
             <a href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a href="#blog">Blog</a>
-          </li>
-          <li>
             <a href="#skills">Skills</a>
           </li>
           <li>
@@ -91,6 +88,7 @@ const Nav = styled(motion.nav)`
       .active {
         a {
           border-bottom: 0.2rem solid var(--secondary-color);
+          font-weight: bold;
         }
       }
 
@@ -98,7 +96,6 @@ const Nav = styled(motion.nav)`
         a {
           color: white;
           text-decoration: none;
-          font-weight: bold;
           font-size: 1.1rem;
         }
       }
@@ -132,16 +129,22 @@ const Nav = styled(motion.nav)`
       top: 0;
       right: 0;
       width: ${({ state }) => (state ? "60%" : "0%")};
+      opacity: 0;
       height: 100vh;
       background-color: var(--secondary-color);
-      opacity: 0;
       visibility: hidden;
       transition: 0.4s ease-in-out;
+
       ul {
         flex-direction: column;
         text-align: center;
         height: 100%;
         justify-content: center;
+        li {
+          a {
+            font-weight: bold;
+          }
+        }
       }
     }
   }
