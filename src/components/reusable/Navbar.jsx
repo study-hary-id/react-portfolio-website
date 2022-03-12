@@ -2,26 +2,26 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { useScroll } from "./useScroll";
-import { navAnimations } from "../animations";
+import { useScroll } from "../useScroll";
+import { navAnimations } from "../../animations";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 
-import logo from "../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [element, controls] = useScroll();
 
   const html = document.querySelector("html");
-  html.addEventListener("click", (e) => setIsNavOpen(false));
+  html.addEventListener("click", () => setIsNavOpen(false));
 
   return (
     <Nav
       ref={element}
+      animate={controls}
       variants={navAnimations}
       transition={{ delay: 0.1 }}
-      animate={controls}
       state={isNavOpen ? 1 : 0}
     >
       <div className="brand__container">
