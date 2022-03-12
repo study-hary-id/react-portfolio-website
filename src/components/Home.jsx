@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+
+import Navbar from "./reusable/Navbar";
 import { homeAnimations, homeInfoAnimations } from "../animations";
-import Navbar from "./Navbar";
 
 import home from "../assets/images/home.png";
 import play from "../assets/images/play.png";

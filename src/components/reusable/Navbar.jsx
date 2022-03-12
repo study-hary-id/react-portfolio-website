@@ -2,32 +2,42 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { useScroll } from "./useScroll";
-import { navAnimations } from "../animations";
+import { useScroll } from "../useScroll";
+import { navAnimations } from "../../animations";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-
-import logo from "../assets/images/logo.png";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [element, controls] = useScroll();
 
   const html = document.querySelector("html");
-  html.addEventListener("click", (e) => setIsNavOpen(false));
+  html.addEventListener("click", () => setIsNavOpen(false));
+
+  const links = [
+    { name: "Home", path: "#home" },
+    { name: "Services", path: "#services" },
+    { name: "Portfolio", path: "#portfolio" },
+    { name: "Skills", path: "#skills" },
+    { name: "Contact", path: "#contact" },
+  ];
+
+  const navLinks = links.map((link, key) => (
+    <li className={key === 0 ? "active" : ""} key={key}>
+      <a href={link.path}>{link.name}</a>
+    </li>
+  ));
 
   return (
     <Nav
       ref={element}
+      animate={controls}
       variants={navAnimations}
       transition={{ delay: 0.1 }}
-      animate={controls}
       state={isNavOpen ? 1 : 0}
     >
       <div className="brand__container">
-        <a href="#" className="brand">
-          <img src={logo} alt="logo" />
-        </a>
+        <a href="#" className="brand">STUDYHARY</a>
         <div className="toggle">
           {isNavOpen ? 
             <MdClose onClick={() => setIsNavOpen(false)} /> :
@@ -39,26 +49,7 @@ function Navbar() {
       </div>
 
       <div className={`links ${isNavOpen ? "show" : ""}`}>
-        <ul>
-          <li className="active">
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="#blog">Blog</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
+        <ul>{navLinks}</ul>
       </div>
     </Nav>
   );
@@ -67,12 +58,20 @@ function Navbar() {
 const Nav = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
-  margin: 0 12rem;
   padding-top: 2rem;
+  margin: 0 12rem;
   color: white;
 
   .brand__container {
     margin: 0 2rem;
+    .brand {
+      font-size: 22px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.5rem;
+      border-bottom: 0.3rem solid #fff;
+      color: #fff;
+    }
     .toggle {
       display: none;
     }
@@ -87,6 +86,7 @@ const Nav = styled(motion.nav)`
       .active {
         a {
           border-bottom: 0.2rem solid var(--secondary-color);
+          font-weight: bold;
         }
       }
 
@@ -94,7 +94,6 @@ const Nav = styled(motion.nav)`
         a {
           color: white;
           text-decoration: none;
-          font-weight: bold;
           font-size: 1.1rem;
         }
       }
@@ -128,16 +127,22 @@ const Nav = styled(motion.nav)`
       top: 0;
       right: 0;
       width: ${({ state }) => (state ? "60%" : "0%")};
+      opacity: 0;
       height: 100vh;
       background-color: var(--secondary-color);
-      opacity: 0;
       visibility: hidden;
       transition: 0.4s ease-in-out;
+
       ul {
         flex-direction: column;
         text-align: center;
         height: 100%;
         justify-content: center;
+        li {
+          a {
+            font-weight: bold;
+          }
+        }
       }
     }
   }
