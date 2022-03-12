@@ -7,8 +7,6 @@ import { navAnimations } from "../../animations";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 
-import logo from "../../assets/images/logo.png";
-
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [element, controls] = useScroll();
@@ -25,9 +23,7 @@ function Navbar() {
       state={isNavOpen ? 1 : 0}
     >
       <div className="brand__container">
-        <a href="#" className="brand">
-          <img src={logo} alt="logo" />
-        </a>
+        <a href="#" className="brand">STUDYHARY</a>
         <div className="toggle">
           {isNavOpen ? 
             <MdClose onClick={() => setIsNavOpen(false)} /> :
@@ -67,12 +63,20 @@ function Navbar() {
 const Nav = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
-  margin: 0 12rem;
   padding-top: 2rem;
+  margin: 0 12rem;
   color: white;
 
   .brand__container {
     margin: 0 2rem;
+    .brand {
+      font-size: 22px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.5rem;
+      border-bottom: 0.3rem solid #fff;
+      color: #fff;
+    }
     .toggle {
       display: none;
     }
