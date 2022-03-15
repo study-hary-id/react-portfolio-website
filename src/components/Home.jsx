@@ -23,10 +23,10 @@ function Home() {
           </div>
           <div className="subTitle">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vivamus pharetra mi tincidunt diam porttitor sollicitudin
-              feugiat sed nibh. Morbi ornare purus dui, at imperdiet metus
-              tempus a.
+              I'm a self taught learner who likes technology around <em>web development</em> especially
+              in <strong>Backend Development</strong> and <strong>Artificial Intelligence</strong> or <strong>Machine Learning</strong>.
+              Also has more interest in designing, enhancing, and maintaining web applications
+              using <strong>Go</strong>, <strong>Python</strong>, and <strong>JavaScript</strong>.
             </p>
           </div>
           <img src={play} alt="play" />
