@@ -91,7 +91,7 @@ const Section = styled.section`
       align-items: flex-start;
       gap: 1.2rem;
       margin-top: 8rem;
-      padding-left: 18rem;
+      padding-left: 14rem;
       width: 60%;
 
       .title {
