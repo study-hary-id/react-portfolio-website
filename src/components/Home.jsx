@@ -128,13 +128,20 @@ const Section = styled.section`
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     .home {
       .content {
-        padding-left: 2rem;
+        padding: 0 2rem;
         width: 100%;
+        margin-top: 2rem;
         margin-bottom: 2rem;
         .title {
           h1 {
-            font-size: 4rem;
+            font-size: 3.25rem;
             line-height: 4rem;
+          }
+        }
+
+        .subTitle {
+          p {
+            text-align: justify;
           }
         }
       }
