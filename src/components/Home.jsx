@@ -23,10 +23,10 @@ function Home() {
           </div>
           <div className="subTitle">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vivamus pharetra mi tincidunt diam porttitor sollicitudin
-              feugiat sed nibh. Morbi ornare purus dui, at imperdiet metus
-              tempus a.
+              I'm a self taught learner who likes technology around <em>web development</em> especially
+              in <strong>Backend Development</strong> and <strong>Artificial Intelligence</strong> or <strong>Machine Learning</strong>.
+              Also has more interest in designing, enhancing, and maintaining web applications
+              using <strong>Go</strong>, <strong>Python</strong>, and <strong>JavaScript</strong>.
             </p>
           </div>
           <img src={play} alt="play" />
@@ -41,11 +41,11 @@ function Home() {
         <div className="grid">
           <div className="col">
             <strong>Agency</strong>
-            <p>Digital Crafters</p>
+            <p>Intelegency Technology International</p>
           </div>
           <div className="col">
             <strong>Email</strong>
-            <p>haryansyah.person.id@gmail.com</p>
+            <p>haryansyah.person.id @gmail.com</p>
           </div>
           <div className="col">
             <strong>Mobile</strong>
@@ -54,7 +54,7 @@ function Home() {
           <div className="col">
             <strong>Address</strong>
             <p>Kab. Bogor, Jawa Barat</p>
-            <p>17620 Klapanunggal</p>
+            <p>16710 Klapanunggal</p>
           </div>
           <div className="col">
             <strong>Services</strong>
@@ -91,7 +91,7 @@ const Section = styled.section`
       align-items: flex-start;
       gap: 1.2rem;
       margin-top: 8rem;
-      padding-left: 18rem;
+      padding-left: 14rem;
       width: 60%;
 
       .title {
@@ -128,13 +128,20 @@ const Section = styled.section`
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     .home {
       .content {
-        padding-left: 2rem;
+        padding: 0 2rem;
         width: 100%;
+        margin-top: 2rem;
         margin-bottom: 2rem;
         .title {
           h1 {
-            font-size: 4rem;
+            font-size: 3.25rem;
             line-height: 4rem;
+          }
+        }
+
+        .subTitle {
+          p {
+            text-align: justify;
           }
         }
       }
@@ -146,6 +153,10 @@ const Section = styled.section`
         grid-template-columns: 1fr;
       }
     }
+  }
+
+  @media screen and (max-height: 909px) and (min-width: 1080px) {
+    height: 909px;
   }
 `;
 
