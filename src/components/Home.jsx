@@ -154,6 +154,10 @@ const Section = styled.section`
       }
     }
   }
+
+  @media screen and (max-height: 909px) and (min-width: 1080px) {
+    height: 909px;
+  }
 `;
 
 export default Home;
