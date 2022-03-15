@@ -41,11 +41,11 @@ function Home() {
         <div className="grid">
           <div className="col">
             <strong>Agency</strong>
-            <p>Digital Crafters</p>
+            <p>Intelegency Technology International</p>
           </div>
           <div className="col">
             <strong>Email</strong>
-            <p>haryansyah.person.id@gmail.com</p>
+            <p>haryansyah.person.id @gmail.com</p>
           </div>
           <div className="col">
             <strong>Mobile</strong>
@@ -54,7 +54,7 @@ function Home() {
           <div className="col">
             <strong>Address</strong>
             <p>Kab. Bogor, Jawa Barat</p>
-            <p>17620 Klapanunggal</p>
+            <p>16710 Klapanunggal</p>
           </div>
           <div className="col">
             <strong>Services</strong>
